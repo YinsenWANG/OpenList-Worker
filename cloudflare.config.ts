@@ -9,6 +9,7 @@ export default defineConfig({
     compatibilityDate: "2026-08-04",
     compatibilityFlags: ["nodejs_compat"],
     workersDev: true,
+    domains: ["openlist.2692268.xyz"],
     previewUrls: false,
     assets: { runWorkerFirst: ["/", "/index.html"] },
     env: {

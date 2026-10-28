@@ -1,5 +1,7 @@
 ## 此 Fork 的 Cloudflare 部署
 
+访问地址：https://openlist.2692268.xyz （HTTPS 自定义域名）。
+
 本站使用 `cf` CLI，配置见 `cloudflare.config.ts` 和 `wrangler.config.ts`。
 已固定 Worker 名称为 `openlist-worker`，并绑定独立 KV 数据库；请勿更换 KV ID，否则会切换到另一个数据库。
 
