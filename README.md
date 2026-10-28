@@ -1,3 +1,15 @@
+## 此 Fork 的 Cloudflare 部署
+
+本站使用 `cf` CLI，配置见 `cloudflare.config.ts` 和 `wrangler.config.ts`。
+已固定 Worker 名称为 `openlist-worker`，并绑定独立 KV 数据库；请勿更换 KV ID，否则会切换到另一个数据库。
+
+`pnpm install --frozen-lockfile` 后运行 `pnpm run deploy:worker`，会先下载前端并构建，再发布。
+如已执行 `pnpm run build:worker`，可运行 `pnpm exec cf deploy --prebuilt`。
+
+`JWT_SECRET` 和 `ADMIN_PASS` 通过 Cloudflare Secrets 配置，不保存在 Git 仓库。后续部署会保留已有 Secrets。
+
+原先缺少 `dist` 的问题由构建配置中的 `pnpm run build` 解决，KV 绑定和 `workers.dev` 访问也已启用。
+
 <div align="center">
   <img src="https://raw.githubusercontent.com/OpenListTeam/Logo/main/logo.svg" width="128" height="128" alt="logo" />
 
